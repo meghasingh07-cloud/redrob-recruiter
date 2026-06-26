@@ -1,6 +1,7 @@
 import json
 import gzip
 import csv
+import sys
 
 
 # =========================
@@ -184,8 +185,12 @@ def generate_reasoning(c):
 # MAIN PIPELINE
 # =========================
 def main():
-    input_path = "candidates.jsonl"
-    output_path = "submission.csv"
+    if len(sys.argv) > 1:
+        input_path = sys.argv[1]
+    else:
+        input_path = "candidates.jsonl"
+
+    output_path = "submission.csv""
 
     candidates = load_candidates(input_path)
 
