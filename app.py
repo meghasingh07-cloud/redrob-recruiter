@@ -3,7 +3,7 @@ import pandas as pd
 import subprocess
 
 def run_demo(file):
-    subprocess.run(["python", "rank.py"])
+    subprocess.run(["python", "rank.py", file.name], check=True)
 
     df = pd.read_csv("submission.csv")
 
